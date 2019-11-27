@@ -57,7 +57,7 @@ private boolean existJWT(HttpServletRequest request, HttpServletResponse respons
 }
 
     private Claims validateJWT(HttpServletRequest req){
-        String jwToken = req.getHeader("Authroization").replace("Bearer", "");
+        String jwToken = req.getHeader("Authorization").replace("Bearer", "");
     return Jwts.parser()
             .setSigningKey("n2r5u8x/A%D*G-KaPdSgVkYp3s6v9y$B&E(H+MbQeThWmZq4t7w!z%C*F-J@NcRf".getBytes())
             .parseClaimsJws(jwToken).getBody();
