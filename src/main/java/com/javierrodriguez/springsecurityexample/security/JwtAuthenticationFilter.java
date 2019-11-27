@@ -47,10 +47,10 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
-            byte[] palaabraSecreta = "bragasdeesparto".getBytes();
+            byte[] palaabraSecreta = "n2r5u8x/A%D*G-KaPdSgVkYp3s6v9y$B&E(H+MbQeThWmZq4t7w!z%C*F-J@NcRf".getBytes();
             Log.warn(palaabraSecreta.toString());
             String token = Jwts.builder()
-                    .signWith(Keys.hmacShaKeyFor(palaabraSecreta), SignatureAlgorithm.HS256)
+                    .signWith(Keys.hmacShaKeyFor(palaabraSecreta), SignatureAlgorithm.HS512)
                     .setHeaderParam("type", "jwt")
                     .setIssuer("secure-api")
                     .setAudience("secuer-app")
